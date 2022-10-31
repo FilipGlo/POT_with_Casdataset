@@ -3,7 +3,7 @@ library(MASS)
 
 # Aim of this program is to evaluate the expected value of claims greater than chosen treshold so E(Y|Y>u)
 
-##Zbiór danych
+##Loading data set
 
 data(swmotorcycle)
 data_set=swmotorcycle
@@ -40,7 +40,7 @@ u = 80000
 p=1-(1-pgpd(threshold, scale=tau, shape=ksi))*(1+ksi*(u-threshold)/tau)^(-1/ksi)
 
 pgpd(u, loc=threshold, scale=tau, shape=ksi)
-pgpd(threshold, loc=threshold scale=tau, shape=ksi)
+pgpd(threshold, loc=threshold, scale=tau, shape=ksi)
 
 quantile_fitted_p = threshold+tau/ksi*((n*(1-p)/n_threshold)^(-1*ksi)-1)
 
